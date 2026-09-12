@@ -200,7 +200,7 @@ def planoconcave(R1, R2, T, n, d, ax, f, F1_x, F2_x, FFL, BFL):
         ax.plot(x1_p, y1_p, label='R1', color="k")
         ax.plot([x_2_max, -T/2], [y_2_max, d/2], color='k')
         ax.plot([x_2_max, -T/2], [y_2_min, -d/2], color='k')
-        ax.fill(x_poly, y_poly, color='lightblue', alpha=0.5, label='Glass (N-BK7)')
+        ax.fill(x_poly, y_poly, color='lightblue', alpha=0.5, label='Glass')
         
         if f != float('inf'):
             ax.scatter(F1_x, 0, color="red", label=f"F1 (FFL: {FFL:.1f}mm)", zorder=3)
@@ -222,7 +222,7 @@ def planoconvex(R1, R2, T, n, d, ax, f, F1_x, F2_x, FFL, BFL):
         x2_p = np.full_like(y2_p, T/2)
     
         x1_p = np.array(x1_p)
-        y_1 = np.array(y_1)
+        y_1 = np.array(y_1) 
     
         mask_1 = (y_1 >= -d/2) & (y_1 <= d/2)
     
@@ -289,7 +289,7 @@ def planoconvex(R1, R2, T, n, d, ax, f, F1_x, F2_x, FFL, BFL):
         ax.axhline(0, color='black', linewidth=1)
         ax.plot(x2_p[mask_2], y_2[mask_2], label='R2', color='k')
         ax.plot(x1_p, y1_p, color='k')
-        ax.fill(x_poly, y_poly, color='lightblue', alpha=0.5, label='Glass (N-BK7)')
+        ax.fill(x_poly, y_poly, color='lightblue', alpha=0.5, label='Glass')
         
         if f != float('inf'):
             ax.scatter(F1_x, 0, color="red", label=f"F1 (FFL: {FFL:.1f}mm)", zorder=3)
